@@ -8,30 +8,49 @@
   
   <title>Frontend Mentor | Age calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <main class="main-container">
+    <article class="age-calculator-container">
+      <section class="input-section">
+        <form action="" class="age-calculator-form" id="calculator-form" novalidate>
+          <div class="form-container">
+            <label for="day">Day</label>
+            <input type="text" id="day" name="day" placeholder="DD" aria-describedby="day-error-msg" inputmode="numeric" pattern="[0-9]*">
+            <span class="error-msg day-error" id="day-error-msg">This field is required</span>
+          </div>
 
-  Day
-  DD
+          <div class="form-container">
+            <label for="month">Month</label>
+            <input type="text" id="month" name="month" placeholder="MM" aria-describedby="month-error-msg" inputmode="numeric" pattern="[0-9]*">
+            <span class="error-msg month-error" id="month-error-msg">This field is required</span>
+          </div>
 
-  Month
-  MM
+          <div class="form-container">
+            <label for="year">Year</label>
+            <input type="text" id="year" name="year" placeholder="YYYY" aria-describedby="year-error-msg" inputmode="numeric" pattern="[0-9]*">
+            <span class="error-msg year-error" id="year-error-msg">This field is required</span>
+          </div>
+        </form>
+      </section>
+      
+      <section class="separator-section">
+        <hr class="line-separator">
+        <button type="submit" class="arrow-icon-btn" id="submit-btn" form="calculator-form" aria-label="Calculate age">
+          <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="4">
+            <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g>
+          </svg>
+        </button>
+      </section>
 
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
-  
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
+      <section class="output-section" aria-live="polite" aria-atomic="true">
+        <h2><span class="output-text">--</span> years</h2>
+        <h2><span class="output-text">--</span> months</h2>
+        <h2><span class="output-text">--</span> days</h2>
+      </section>
+    </article>
+  </main>
 </body>
 </html>

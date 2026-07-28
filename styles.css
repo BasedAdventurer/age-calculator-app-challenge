@@ -1,0 +1,238 @@
+/* Regular Weight Font (400) */
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold Weight Font (700) */
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ExtraBold Weight Font (800) */
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+    --clr-primary-purple-500: hsl(259, 100%, 65%);
+    --clr-primary-red-400: hsl(0, 100%, 67%);
+
+    --clr-neutral-white: hsl(0, 100%, 100%);
+    --clr-neutral-grey-100: hsl(0, 0%, 94%);
+    --clr-neutral-grey-200: hsl(0, 0%, 86%);
+    --clr-neutral-grey-500: hsl(0, 1%, 44%);
+    --clr-neutral-black: hsl(0, 0%, 0%);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input,
+textarea,
+select,
+button {
+    font: inherit;
+}
+
+img,
+figure,
+svg,
+video {
+    max-width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--clr-neutral-grey-200);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--clr-primary-purple-500);
+    outline-offset: 3px;
+}
+
+.main-container {
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 20px;
+}
+
+.age-calculator-container {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+
+    background-color: var(--clr-neutral-white);
+    padding: 2.8rem;
+    padding-block-start: 5.5rem;
+    border-radius: 30px 30px 100px 30px;
+
+    width: clamp(400px, 75vw, 650px);
+}
+
+.age-calculator-form {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    
+    @media(min-width: 48em) {
+        margin-inline-end: 140px;
+    }
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-container label {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: var(--clr-neutral-grey-500);
+}
+
+.form-container input {
+    font-weight: 700;
+    font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+    line-height: 1.2;
+    border: 1px solid var(--clr-neutral-grey-200);
+    padding-block: 0.8rem;
+    padding-inline: 1.5rem;
+    border-radius: 6px;
+    width: 100%;
+    caret-color: var(--clr-primary-purple-500);
+    cursor: pointer;
+
+    &:active, &:focus {
+        outline: none;
+        border-color: var(--clr-primary-purple-500);
+    }
+}
+
+.form-container.error input {
+    border-color: var(--clr-primary-red-400);
+}
+
+.form-container.error label {
+    color: var(--clr-primary-red-400);
+}
+
+.error-msg {
+    visibility: hidden;
+    font-style: italic;
+    color: var(--clr-primary-red-400);
+}
+
+.form-container.error .error-msg {
+    visibility: visible;
+}
+
+.separator-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    @media(min-width: 48em) {
+        justify-content: flex-end;
+        width: 100%;
+    }
+}
+
+.line-separator {
+    height: 1px;
+    background-color: var(--clr-neutral-grey-200);
+    border: none;
+    width: 100%;
+}
+
+.arrow-icon-btn {
+    background-color: var(--clr-primary-purple-500);
+    position: absolute;
+    padding: 18px 18px;
+    border-radius: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover, &:active {
+        background-color: var(--clr-neutral-black);
+    }
+}
+
+.arrow-icon-btn svg {
+    width: 25px;
+    height: auto;
+}
+
+.output-section {
+    line-height: 1.1;
+    margin-block-end: 30px;
+}
+
+.output-section h2 {
+    font-size: clamp(4rem, 8vw + 1rem, 5.8rem);
+    font-weight: 800;
+    font-style: italic;
+}
+
+.output-section h2 span {
+    color: var(--clr-primary-purple-500);
+}
