@@ -89,7 +89,7 @@ html {
 }
 
 body {
-    background-color: var(--clr-neutral-grey-200);
+    background-color: var(--clr-neutral-grey-100);
 }
 
 a:focus-visible,
